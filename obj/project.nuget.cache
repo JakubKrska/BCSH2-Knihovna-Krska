@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "/ztAshIhZo8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\kubak\\Source\\Repos\\BCSH2-Knihovna-Krska\\KrskaKnihovna.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kubak\\.nuget\\packages\\litedb\\5.0.21\\litedb.5.0.21.nupkg.sha512",
+    "C:\\Users\\kubak\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}
