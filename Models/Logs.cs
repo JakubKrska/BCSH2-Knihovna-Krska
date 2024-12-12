@@ -27,7 +27,7 @@ namespace KrskaKnihovna.Models
         {
             collection.Delete(index);
         }
-        public void Update(T item)
+        public void Edit(T item)
         {
             collection.Update(item);
         }

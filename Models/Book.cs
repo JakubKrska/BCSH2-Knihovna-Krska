@@ -18,7 +18,7 @@ namespace KrskaKnihovna.Models
         }
         public override string? ToString()
         {
-            return string.Format("{0,-30} | pages: {1,-8} | number of books: {2,10} | ID: {3}", Title, PageCount, BookCount, Id);
+            return string.Format("| Title: {0,-30} | Pages: {1,-8} | Number of books: {2,-9} | ID: {3}", Title, PageCount, BookCount, Id);
         }
     }
 }

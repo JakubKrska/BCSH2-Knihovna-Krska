@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace KrskaKnihovna
 {
-    /// <summary>
-    /// Interakční logika pro Page1.xaml
-    /// </summary>
+   
     public partial class App : Application
     { 
     }

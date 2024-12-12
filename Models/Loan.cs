@@ -22,7 +22,7 @@ namespace KrskaKnihovna.Models
 
         public override string? ToString()
         {
-            return string.Format("{0,-20} | {1,-27} |Customer: {2,12} | ID: {3}", SelectedLibrary.Name, SelectedBook.Title, SelectedCustomer.LastName, Id);
+            return string.Format("| Library: {0,-20} | Title: {1,-27} | Customer: {2,12} | ID: {3}", SelectedLibrary.Name, SelectedBook.Title, SelectedCustomer.LastName, Id);
         }
     }
 }

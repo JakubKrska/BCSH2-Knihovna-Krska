@@ -1,0 +1,23 @@
+﻿<Window x:Class="KrskaKnihovna.Views.LoansView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Loan" Height="300" Width="450" ResizeMode="NoResize">
+    <Grid>
+        <!-- Labels -->
+        <Label Content="Library" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer" HorizontalAlignment="Left" Margin="30,120,0,0" VerticalAlignment="Top"/>
+
+        <!-- ComboBoxes -->
+        <ComboBox Name="comboBoxLibraries" HorizontalAlignment="Left" Margin="140,20,0,0" VerticalAlignment="Top" Width="250" 
+                  ItemsSource="{Binding LibrariesItems}" SelectedItem="{Binding SelectedLibrary}"/>
+        <ComboBox Name="comboBoxBooks" HorizontalAlignment="Left" Margin="140,70,0,0" VerticalAlignment="Top" Width="250" 
+                  ItemsSource="{Binding BooksItems}" SelectedItem="{Binding SelectedBook}"/>
+        <ComboBox Name="comboBoxCustomers" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" Width="250" 
+                  ItemsSource="{Binding CustomersItems}" SelectedItem="{Binding SelectedCustomer}"/>
+
+        <!-- Buttons -->
+        <Button Content="OK" HorizontalAlignment="Left" Margin="140,200,0,0" VerticalAlignment="Top" Width="80" Height="25" Command="{Binding OkCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="240,200,0,0" VerticalAlignment="Top" Width="80" Height="25" Command="{Binding CancelCommand}"/>
+    </Grid>
+</Window>

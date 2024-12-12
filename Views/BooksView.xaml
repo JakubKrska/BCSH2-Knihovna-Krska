@@ -1,0 +1,20 @@
+﻿<Window x:Class="KrskaKnihovna.Views.BooksView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add/Edit Book" Height="250" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <!-- Labels -->
+        <Label Content="Title" HorizontalAlignment="Left" Margin="30,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Page Count" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book Count" HorizontalAlignment="Left" Margin="30,120,0,0" VerticalAlignment="Top"/>
+
+        <!-- Input Fields -->
+        <TextBox Name="textBoxTitle" HorizontalAlignment="Left" Margin="140,20,0,0" VerticalAlignment="Top" Width="200" Text="{Binding BookTitle}"/>
+        <TextBox Name="textBoxPages" HorizontalAlignment="Left" Margin="140,70,0,0" VerticalAlignment="Top" Width="200" Text="{Binding BookPages}"/>
+        <TextBox Name="textBoxCount" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" Width="200" Text="{Binding BookCount}"/>
+
+        <!-- Buttons -->
+        <Button Content="OK" HorizontalAlignment="Left" Margin="140,170,0,0" VerticalAlignment="Top" Width="80" Height="25" Command="{Binding OkCommand}"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="240,170,0,0" VerticalAlignment="Top" Width="80" Height="25" Command="{Binding CancelCommand}"/>
+    </Grid>
+</Window>
