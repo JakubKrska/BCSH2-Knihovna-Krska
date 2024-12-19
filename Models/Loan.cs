@@ -16,13 +16,12 @@ namespace KrskaKnihovna.Models
             SelectedLibrary = selectedLibrary;
             SelectedBook = selectedBook;
             SelectedCustomer = selectedCustomer;
-            selectedCustomer.LoanCount++;
-            selectedBook.BookCount--;
+            SelectedBook.BookCount++;
         }
 
         public override string? ToString()
         {
-            return string.Format("| Library: {0,-20} | Title: {1,-27} | Customer: {2,12} | ID: {3}", SelectedLibrary.Name, SelectedBook.Title, SelectedCustomer.LastName, Id);
+            return string.Format("{0,-30} Title: {1,-30} Customer: {2,-12} ID:{3}", SelectedLibrary.Name, SelectedBook.Title, SelectedCustomer.LastName, Id);
         }
     }
 }

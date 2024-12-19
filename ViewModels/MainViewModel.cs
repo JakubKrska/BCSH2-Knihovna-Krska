@@ -177,10 +177,10 @@ namespace KrskaKnihovna.ViewModels
             ButtonCustomersCommand = new RelayCommand(_ => Refresh(EnumPossibilities.Customers));
             ButtonLoansCommand = new RelayCommand(_ => Refresh(EnumPossibilities.Loans));
             ButtonAddCommand = new RelayCommand(_ => ButtonNew_Click(option));
-            ButtonEditCommand = new RelayCommand(_ => ButtonEdit_Click(option));
-            ButtonDeleteCommand = new RelayCommand(_ => ButtonDelete_Click(option));
-            ButtonExitCommand = new RelayCommand(_ => ButtonExit_Click());
-            ButtonFilterCommand = new RelayCommand(_ => ButtonFilter_Click());
+            ButtonEditCommand = new RelayCommand(_ => ButtonEditClick(option));
+            ButtonDeleteCommand = new RelayCommand(_ => ButtonDeleteClick(option));
+            ButtonExitCommand = new RelayCommand(_ => ButtonExitClick());
+            ButtonFilterCommand = new RelayCommand(_ => ButtonFilterClick());
         }
 
         private void InitializeDatabase()
@@ -210,58 +210,114 @@ namespace KrskaKnihovna.ViewModels
             switch (option)
             {
                 case EnumPossibilities.Libraries:
-                    addBranch();
+                    AddBranch();
                     break;
                 case EnumPossibilities.Books:
-                    addBook();
+                    AddBook();
                     break;
                 case EnumPossibilities.Customers:
-                    addCustomer();
+                    AddCustomer();
                     break;
                 case EnumPossibilities.Loans:
-                    addLoan();
+                    AddLoan();
                     break;
             }
             Refresh(option);
         }
 
-        private void ButtonDelete_Click(EnumPossibilities option)
+
+        private void ButtonDeleteClick(EnumPossibilities option)
         {
             switch (option)
             {
                 case EnumPossibilities.Libraries:
-                    librariesList.Remove(findElement());
+                    MessageBox.Show("Libraries cannot be deleted!");
                     break;
                 case EnumPossibilities.Books:
-                    booksList.Remove(findElement());
-                    break;
-                case EnumPossibilities.Customers:
-                    customersList.Remove(findElement());
-                    break;
-                case EnumPossibilities.Loans:
-                    Loan? removedLoan = loansList.GetAll().FirstOrDefault(l => l.Id == findElement());
-                    if (removedLoan != null)
+                    var bookId = FindElement();
+                    var bookToDelete = booksList.GetAll().FirstOrDefault(b => b.Id == bookId);
+
+                    if (bookToDelete != null)
                     {
-                        var customer = customersList.GetAll().FirstOrDefault(c => c.Id == removedLoan.SelectedCustomer.Id);
-                        if (customer != null)
+                        // Smazat všechny výpůjčky spojené s touto knihou
+                        var relatedLoans = loansList.GetAll().Where(l => l.SelectedBook.Id == bookId).ToList();
+                        foreach (var loan in relatedLoans)
                         {
-                            customer.LoanCount--;
-                            customersList.Edit(customer);
+                            // Snížit počet výpůjček zákazníka
+                            var customer = customersList.GetAll().FirstOrDefault(c => c.Id == loan.SelectedCustomer.Id);
+                            if (customer != null)
+                            {
+                                customer.LoanCount--;
+                                customersList.Edit(customer);
+                            }
+
+                            loansList.Remove(loan.Id);
                         }
-                        var book = booksList.GetAll().FirstOrDefault(b => b.Id == removedLoan.SelectedBook.Id);
+
+                        // Smazat samotnou knihu
+                        booksList.Remove(bookId);
+                    }
+                    break;
+
+                case EnumPossibilities.Customers:
+                    var customerId = FindElement();
+                    var customerToDelete = customersList.GetAll().FirstOrDefault(c => c.Id == customerId);
+
+                    if (customerToDelete != null)
+                    {
+                        // Smazat všechny výpůjčky spojené s tímto zákazníkem
+                        var relatedLoans = loansList.GetAll().Where(l => l.SelectedCustomer.Id == customerId).ToList();
+                        foreach (var loan in relatedLoans)
+                        {
+                            // Vrátit knihy spojené s výpůjčkami
+                            var book = booksList.GetAll().FirstOrDefault(b => b.Id == loan.SelectedBook.Id);
+                            if (book != null)
+                            {
+                                book.BookCount++;
+                                booksList.Edit(book);
+                            }
+
+                            loansList.Remove(loan.Id);
+                        }
+
+                        // Smazat samotného zákazníka
+                        customersList.Remove(customerId);
+                    }
+                    break;
+
+                case EnumPossibilities.Loans:
+                    var loanId = FindElement();
+                    var loanToDelete = loansList.GetAll().FirstOrDefault(l => l.Id == loanId);
+
+                    if (loanToDelete != null)
+                    {
+                        // Vrátit knihu
+                        var book = booksList.GetAll().FirstOrDefault(b => b.Id == loanToDelete.SelectedBook.Id);
                         if (book != null)
                         {
                             book.BookCount++;
                             booksList.Edit(book);
                         }
-                        loansList.Remove(removedLoan.Id);
+
+                        // Snížit počet výpůjček zákazníka
+                        var customer = customersList.GetAll().FirstOrDefault(c => c.Id == loanToDelete.SelectedCustomer.Id);
+                        if (customer != null)
+                        {
+                            customer.LoanCount--;
+                            customersList.Edit(customer);
+                        }
+
+                        // Smazat samotnou výpůjčku
+                        loansList.Remove(loanId);
                     }
                     break;
             }
+
+            // Obnov zobrazení dat
             Refresh(option);
         }
 
-        private int findElement()
+        private int FindElement()
         {
             if (SelectedListBoxItem != null)
             {
@@ -275,7 +331,7 @@ namespace KrskaKnihovna.ViewModels
             return 0;
         }
 
-        private void ButtonExit_Click()
+        private void ButtonExitClick()
         {
             MessageBoxResult result = MessageBox.Show("Are you sure you want to exit the application?", "Exit Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
@@ -285,36 +341,41 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void ButtonEdit_Click(EnumPossibilities option)
+        private void ButtonEditClick(EnumPossibilities option)
         {
             switch (option)
             {
                 case EnumPossibilities.Libraries:
-                    var branchToEdit = librariesList.GetAll().FirstOrDefault(l => l.Id == findElement());
+                    var branchToEdit = librariesList.GetAll().FirstOrDefault(l => l.Id == FindElement());
                     if (branchToEdit != null)
                     {
-                        editBranch(branchToEdit.Id);
+                        EditBranch(branchToEdit.Id);
                     }
                     break;
                 case EnumPossibilities.Books:
-                    var bookToEdit = booksList.GetAll().FirstOrDefault(b => b.Id == findElement());
+                    var bookToEdit = booksList.GetAll().FirstOrDefault(b => b.Id == FindElement());
                     if (bookToEdit != null)
                     {
-                        editBook(bookToEdit.Id);
+                        EditBook(bookToEdit.Id);
                     }
                     break;
                 case EnumPossibilities.Customers:
-                    var customerToEdit = customersList.GetAll().FirstOrDefault(c => c.Id == findElement());
+                    var customerToEdit = customersList.GetAll().FirstOrDefault(c => c.Id == FindElement());
                     if (customerToEdit != null)
                     {
-                        editCustomer(customerToEdit.Id);
+                        EditCustomer(customerToEdit.Id);
                     }
                     break;
+                case EnumPossibilities.Loans:
+                    // Při pokusu o editaci výpůjček zobrazíme varování
+                    MessageBox.Show("Loans cannot be edited!");
+                    break;
+                    
             }
             Refresh(option);
         }
 
-        private void addBranch()
+        private void AddBranch()
         {
             LibraryBranchViewModel branchVM = new LibraryBranchViewModel();
             LibraryBranchView dialogBranch = new LibraryBranchView { DataContext = branchVM };
@@ -327,7 +388,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void addBook()
+        private void AddBook()
         {
             BooksViewModel bookVM = new BooksViewModel();
             BooksView dialogBook = new BooksView { DataContext = bookVM };
@@ -340,7 +401,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void addCustomer()
+        private void AddCustomer()
         {
             CustomersViewModel customersVM = new CustomersViewModel();
             CustomersView dialogCustomer = new CustomersView { DataContext = customersVM };
@@ -353,7 +414,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void addLoan()
+        private void AddLoan()
         {
             LoansViewModel loanVM = new LoansViewModel(librariesList, booksList, customersList);
             LoansView loans = new LoansView(librariesList, booksList, customersList) { DataContext = loanVM };
@@ -362,15 +423,32 @@ namespace KrskaKnihovna.ViewModels
 
             if (loanVM.AddLoan)
             {
-                loansList.Add(loanVM.LoanedBook);
-                customersList.Edit(loanVM.customer);
-                booksList.Edit(loanVM.book);
+                
 
+                // Update the database dynamically
+                var book = booksList.GetAll().FirstOrDefault(b => b.Id == loanVM.LoanedBook.SelectedBook.Id);
+                var customer = customersList.GetAll().FirstOrDefault(c => c.Id == loanVM.LoanedBook.SelectedCustomer.Id);
+
+                if (book != null && customer != null && book.BookCount > 0) 
+                {
+                    // Add the loan
+                    loansList.Add(loanVM.LoanedBook);
+                    // Recalculate book count
+                    book.BookCount--;
+                    booksList.Edit(book);
+
+                    // Recalculate loan count for customer
+                    customer.LoanCount = loansList.GetAll().Count(l => l.SelectedCustomer.Id == customer.Id);
+                    customersList.Edit(customer);
+                }
+                else
+                {
+                    MessageBox.Show("No available books for loan.");
+                }
             }
-
         }
 
-        private void editBranch(int branchId)
+        private void EditBranch(int branchId)
         {
             var editedBranch = librariesList.GetAll().FirstOrDefault(p => p.Id == branchId);
 
@@ -394,7 +472,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void editBook(int bookId)
+        private void EditBook(int bookId)
         {
             var editedBook = booksList.GetAll().FirstOrDefault(p => p.Id == bookId);
 
@@ -419,7 +497,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void editCustomer(int customerId)
+        private void EditCustomer(int customerId)
         {
             var editedCustomer = customersList.GetAll().FirstOrDefault(p => p.Id == customerId);
 
@@ -431,19 +509,27 @@ namespace KrskaKnihovna.ViewModels
 
                 if (editCustomerVM.AddCustomer)
                 {
+                    // Aktualizace zákazníka
                     editedCustomer = editCustomerVM.Customer;
                     editedCustomer.Id = customerId;
+
+                    // Aktualizace všech půjček tohoto zákazníka
                     foreach (var loan in loansList.GetAll().Where(p => p.SelectedCustomer.Id == editedCustomer.Id))
                     {
                         loan.SelectedCustomer.LastName = editCustomerVM.LastName;
                         loansList.Edit(loan);
                     }
+
+                    // Přepočítání počtu výpůjček zákazníka
+                    int activeLoans = loansList.GetAll().Count(l => l.SelectedCustomer.Id == editedCustomer.Id);
+                    editedCustomer.LoanCount = activeLoans;
+
+                    // Uložení zákazníka do databáze
                     customersList.Edit(editedCustomer);
                 }
-
             }
         }
-        private void ButtonFilter_Click()
+        private void ButtonFilterClick()
         {
             listBoxInformationItems.Clear();
             var loans = loansList.GetAll();
@@ -505,6 +591,7 @@ namespace KrskaKnihovna.ViewModels
                     FiltersVisibility = Visibility.Collapsed;
                     foreach (var customer in customersList.GetAll())
                     {
+                        customer.LoanCount = loansList.GetAll().Count(l => l.SelectedCustomer.Id == customer.Id);
                         ListBoxInformationItems.Add(customer.ToString());
                     }
                     break;

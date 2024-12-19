@@ -69,17 +69,14 @@
             </Grid>
 
             <!-- ListBox for data display -->
-            <ListBox Grid.Row="1" ItemsSource="{Binding ListBoxInformationItems}" 
-                     SelectedItem="{Binding SelectedListBoxItem}" Margin="10" Height="350"/>
+            <ListBox ItemsSource="{Binding ListBoxInformationItems}" SelectedItem="{Binding SelectedListBoxItem, Mode=TwoWay}" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" x:Name="listBoxInformace" FontFamily="Consolas" FontSize="14" Margin="0,60,0,20" HorizontalAlignment="Center" Width="800"/>
         </Grid>
 
         <!-- Footer -->
         <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Content="Add" Command="{Binding ButtonAddCommand}" Margin="5" Width="90" Height="40"/>
-            <Button Content="Edit" Command="{Binding ButtonEditCommand}" 
-                IsEnabled="{Binding ButtonEditIsEnabled}" Margin="5" Width="90" Height="40"/>
-            <Button Content="Delete" Command="{Binding ButtonDeleteCommand}" 
-        IsEnabled="{Binding ButtonDeleteIsEnabled}" Margin="5" Width="90" Height="40"/>
+            <Button Content="Edit" Command="{Binding ButtonEditCommand}" Margin="5" Width="90" Height="40"/>
+            <Button Content="Delete" Command="{Binding ButtonDeleteCommand}" Margin="5" Width="90" Height="40"/>
             <Button Content="Exit" Command="{Binding ButtonExitCommand}" Margin="5" Width="90" Height="40"/>
         </StackPanel>
 

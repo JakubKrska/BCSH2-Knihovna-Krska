@@ -83,14 +83,22 @@ namespace KrskaKnihovna.ViewModels
             {
                 if (!string.IsNullOrEmpty(FirstName) && !string.IsNullOrEmpty(LastName) && !string.IsNullOrEmpty(Phone))
                 {
-                    Regex regex = new Regex("^[0-9]+$");
+                    // Ověření, že telefonní číslo obsahuje pouze číslice
+                    Regex regex = new Regex(@"^\d+$");
                     bool isNumber = regex.IsMatch(Phone);
-                    if (isNumber)
+
+                    // Ověření, že telefonní číslo má maximálně 9 číslic
+                    if (isNumber && Phone.Length <= 9)
                     {
-                        Customer = new Customer(FirstName, LastName, Phone)
+                        // Naformátování telefonního čísla: po každých třech číslech vložíme mezeru
+                        string formattedPhone = Regex.Replace(Phone, @"(\d{3})(?=\d)", "$1 ");
+
+                        // Vytvoření zákazníka s naformátovaným telefonem
+                        Customer = new Customer(FirstName, LastName, formattedPhone)
                         {
                             LoanCount = loanCount
                         };
+
                         DialogResult = true;
                         AddCustomer = true;
                         var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
@@ -98,7 +106,7 @@ namespace KrskaKnihovna.ViewModels
                     }
                     else
                     {
-                        MessageBox.Show("Invalid input values!");
+                        MessageBox.Show("Phone number must contain only up to 9 digits.");
                     }
                 }
                 else
@@ -111,6 +119,8 @@ namespace KrskaKnihovna.ViewModels
                 MessageBox.Show("Invalid input values!");
             }
         }
+        
+
 
         private void Cancel()
         {
