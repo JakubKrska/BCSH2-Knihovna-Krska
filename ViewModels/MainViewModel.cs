@@ -285,7 +285,7 @@ namespace KrskaKnihovna.ViewModels
                     }
                     break;
 
-                case EnumPossibilities.Loans:
+                case EnumPossibilities.Loans: // aktualizuje počet dostupnych knih a přepočítá počet vypujček
                     var loanId = FindElement();
                     var loanToDelete = loansList.GetAll().FirstOrDefault(l => l.Id == loanId);
 
@@ -317,7 +317,7 @@ namespace KrskaKnihovna.ViewModels
             Refresh(option);
         }
 
-        private int FindElement()
+        private int FindElement() // Najde ID vybraného objektu z ListBoxu
         {
             if (SelectedListBoxItem != null)
             {
@@ -414,7 +414,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void AddLoan()
+        private void AddLoan() // Checkne dostupnost knihy, snizi pocet a aktualizuje vypujcky
         {
             LoansViewModel loanVM = new LoansViewModel(librariesList, booksList, customersList);
             LoansView loans = new LoansView(librariesList, booksList, customersList) { DataContext = loanVM };
@@ -529,7 +529,7 @@ namespace KrskaKnihovna.ViewModels
                 }
             }
         }
-        private void ButtonFilterClick()
+        private void ButtonFilterClick() // filtruje podle hodnot v comboboxech
         {
             listBoxInformationItems.Clear();
             var loans = loansList.GetAll();

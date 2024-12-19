@@ -88,23 +88,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kubak\\.nuget\\packages\\": {},
-    "F:\\Visual Studio SDK\\NuGetPackages": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kubak\\Source\\Repos\\BCSH2-Knihovna-Krska\\KrskaKnihovna.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Source\\Repos\\BCSH2-Knihovna-Krska-final\\KrskaKnihovna.csproj",
       "projectName": "KrskaKnihovna",
-      "projectPath": "C:\\Users\\kubak\\Source\\Repos\\BCSH2-Knihovna-Krska\\KrskaKnihovna.csproj",
-      "packagesPath": "C:\\Users\\kubak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kubak\\Source\\Repos\\BCSH2-Knihovna-Krska\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Source\\Repos\\BCSH2-Knihovna-Krska-final\\KrskaKnihovna.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Source\\Repos\\BCSH2-Knihovna-Krska-final\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "F:\\Visual Studio SDK\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kubak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -125,13 +125,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+      }
     },
     "frameworks": {
       "net6.0-windows7.0": {
@@ -161,7 +155,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

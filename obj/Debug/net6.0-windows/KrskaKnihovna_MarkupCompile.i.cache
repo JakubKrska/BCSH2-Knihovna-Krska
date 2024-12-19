@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\kubak\Source\Repos\BCSH2-Knihovna-Krska\obj\Debug\net6.0-windows\
+C:\Users\HP\Source\Repos\BCSH2-Knihovna-Krska-final\obj\Debug\net6.0-windows\
 KrskaKnihovna
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\kubak\Source\Repos\BCSH2-Knihovna-Krska\App.xaml
+C:\Users\HP\Source\Repos\BCSH2-Knihovna-Krska-final\App.xaml
 5227330877
 
 23-1853815901
-195-904096991
+195-1553141819
 Views\BooksView.xaml;Views\CustomersView.xaml;Views\LibraryBranchView.xaml;Views\LoansView.xaml;Views\MainWindowView.xaml;
 
 False

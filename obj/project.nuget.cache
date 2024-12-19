@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "/ztAshIhZo8=",
+  "dgSpecHash": "1OWJrVIj+WIWWCExWT5RzAFMJpHkEUnvpYRMvzO2e609cNcyL0xgE2YEfJ0lYgjNELn5/p6D/WHCBgBrcET6GA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kubak\\Source\\Repos\\BCSH2-Knihovna-Krska\\KrskaKnihovna.csproj",
+  "projectFilePath": "C:\\Users\\HP\\Source\\Repos\\BCSH2-Knihovna-Krska-final\\KrskaKnihovna.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kubak\\.nuget\\packages\\litedb\\5.0.21\\litedb.5.0.21.nupkg.sha512",
-    "C:\\Users\\kubak\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512"
+    "C:\\Users\\HP\\.nuget\\packages\\litedb\\5.0.21\\litedb.5.0.21.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KrskaKnihovna")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+90e3376aa61e83ea4260af706dffdcd846621d86")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("KrskaKnihovna")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KrskaKnihovna")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
