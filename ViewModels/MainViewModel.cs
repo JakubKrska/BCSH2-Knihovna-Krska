@@ -36,7 +36,11 @@ namespace KrskaKnihovna.ViewModels
         public MainViewModel()
         {
             InitializeCommands();
-            ListBoxInformationItems = new ObservableCollection<string>();
+            ListBoxBooks = new ObservableCollection<Book>();
+            ListBoxLibraries = new ObservableCollection<Library>();
+            ListBoxLoans = new ObservableCollection<Loan>();
+            ListBoxCustomers= new ObservableCollection<Customer>();
+
             database = DatabaseHelper.GetDatabase();
             if (database == null) { return; }
             InitializeDatabase();
@@ -76,12 +80,34 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private ObservableCollection<string> listBoxInformationItems;
-        public ObservableCollection<string> ListBoxInformationItems
+        
+
+        private ObservableCollection<Book> listBoxBooks;
+        public ObservableCollection<Book> ListBoxBooks
         {
-            get { return listBoxInformationItems; }
-            set { SetProperty(ref listBoxInformationItems, value); }
+            get { return listBoxBooks; }
+            set { SetProperty(ref listBoxBooks, value); }
         }
+
+        private ObservableCollection<Library> listBoxLibraries;
+        public ObservableCollection<Library> ListBoxLibraries
+        {
+            get { return listBoxLibraries; }
+            set { SetProperty(ref listBoxLibraries, value); }
+        }
+        private ObservableCollection<Customer> listBoxCustomers;
+        public ObservableCollection<Customer> ListBoxCustomers
+        {
+            get { return listBoxCustomers; }
+            set { SetProperty(ref listBoxCustomers, value); }
+        }
+        private ObservableCollection<Loan> listBoxLoans;
+        public ObservableCollection<Loan> ListBoxLoans
+        {
+            get { return listBoxLoans; }
+            set { SetProperty(ref listBoxLoans, value); }
+        }
+
 
         private EnumPossibilities _option;
 
@@ -285,7 +311,7 @@ namespace KrskaKnihovna.ViewModels
                     }
                     break;
 
-                case EnumPossibilities.Loans: // aktualizuje počet dostupnych knih a přepočítá počet vypujček
+                case EnumPossibilities.Loans:
                     var loanId = FindElement();
                     var loanToDelete = loansList.GetAll().FirstOrDefault(l => l.Id == loanId);
 
@@ -317,7 +343,7 @@ namespace KrskaKnihovna.ViewModels
             Refresh(option);
         }
 
-        private int FindElement() // Najde ID vybraného objektu z ListBoxu
+        private int FindElement()
         {
             if (SelectedListBoxItem != null)
             {
@@ -414,7 +440,7 @@ namespace KrskaKnihovna.ViewModels
             }
         }
 
-        private void AddLoan() // Checkne dostupnost knihy, snizi pocet a aktualizuje vypujcky
+        private void AddLoan()
         {
             LoansViewModel loanVM = new LoansViewModel(librariesList, booksList, customersList);
             LoansView loans = new LoansView(librariesList, booksList, customersList) { DataContext = loanVM };
@@ -529,9 +555,9 @@ namespace KrskaKnihovna.ViewModels
                 }
             }
         }
-        private void ButtonFilterClick() // filtruje podle hodnot v comboboxech
+        private void ButtonFilterClick()
         {
-            listBoxInformationItems.Clear();
+            listBoxLoans.Clear();
             var loans = loansList.GetAll();
             foreach (var loan in loans)
             {
@@ -541,7 +567,7 @@ namespace KrskaKnihovna.ViewModels
 
                 if (filterLibrary && filterBook && filterCustomer)
                 {
-                    listBoxInformationItems.Add(loan.ToString());
+                    listBoxLoans.Add(loan);
                 }
             }
         }
@@ -559,7 +585,11 @@ namespace KrskaKnihovna.ViewModels
 
         private void Refresh(EnumPossibilities option)
         {
-            ListBoxInformationItems.Clear();
+            ListBoxCustomers.Clear();
+            ListBoxBooks.Clear();
+            ListBoxLibraries.Clear();
+            ListBoxLoans.Clear();
+
             this.option = option;
 
             // Změníme stav pro tlačítko Edit a Delete na základě vybrané sekce
@@ -575,7 +605,7 @@ namespace KrskaKnihovna.ViewModels
                     FiltersVisibility = Visibility.Collapsed;
                     foreach (var library in librariesList.GetAll())
                     {
-                        ListBoxInformationItems.Add(library.ToString());
+                        ListBoxLibraries.Add(library);
                     }
                     break;
                 case EnumPossibilities.Books:
@@ -583,7 +613,7 @@ namespace KrskaKnihovna.ViewModels
                     FiltersVisibility = Visibility.Collapsed;
                     foreach (var book in booksList.GetAll())
                     {
-                        ListBoxInformationItems.Add(book.ToString());
+                        ListBoxBooks.Add(book);
                     }
                     break;
                 case EnumPossibilities.Customers:
@@ -592,7 +622,7 @@ namespace KrskaKnihovna.ViewModels
                     foreach (var customer in customersList.GetAll())
                     {
                         customer.LoanCount = loansList.GetAll().Count(l => l.SelectedCustomer.Id == customer.Id);
-                        ListBoxInformationItems.Add(customer.ToString());
+                        ListBoxCustomers.Add(customer);
                     }
                     break;
                 case EnumPossibilities.Loans:
@@ -600,7 +630,7 @@ namespace KrskaKnihovna.ViewModels
                     FiltersVisibility = Visibility.Visible; 
                     foreach (var loan in loansList.GetAll())
                     {
-                        ListBoxInformationItems.Add(loan.ToString());
+                        ListBoxLoans.Add(loan);
                     }
                     break;
             }
