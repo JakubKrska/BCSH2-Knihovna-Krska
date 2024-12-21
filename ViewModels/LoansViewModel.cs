@@ -13,12 +13,12 @@ namespace KrskaKnihovna.ViewModels
 {
     internal class LoansViewModel : ViewModelBasic
     {
-        private ObservableCollection<string> librariesItems;
-        private ObservableCollection<string> booksItems;
-        private ObservableCollection<string> customersItems;
-        private string selectedLibrary;
-        private string selectedBook;
-        private string selectedCustomer;
+        private ObservableCollection<Library> librariesItems;
+        private ObservableCollection<Book> booksItems;
+        private ObservableCollection<Customer> customersItems;
+        private Library selectedLibrary;
+        private Book selectedBook;
+        private Customer selectedCustomer;
         public Library library;
         public Book book;
         public Customer customer;
@@ -32,43 +32,37 @@ namespace KrskaKnihovna.ViewModels
         public ICommand OkCommand { get; private set; }
         public ICommand CancelCommand { get; private set; }
 
-        public ObservableCollection<string> LibrariesItems
+        public ObservableCollection<Library> LibrariesItems
         {
             get { return librariesItems; }
             set { SetProperty(ref librariesItems, value); }
         }
 
-        public ObservableCollection<string> BooksItems
+        public ObservableCollection<Book> BooksItems
         {
             get { return booksItems; }
             set { SetProperty(ref booksItems, value); }
         }
 
-        public ObservableCollection<string> CustomersItems
+        public ObservableCollection<Customer> CustomersItems
         {
             get { return customersItems; }
             set { SetProperty(ref customersItems, value); }
         }
 
-        public string SelectedLibrary
+        public Library SelectedLibrary
         {
             get { return selectedLibrary; }
-            set
-            {
-                SetProperty(ref selectedLibrary, value);
-            }
+            set { SetProperty(ref selectedLibrary, value); }
         }
 
-        public string SelectedBook
+        public Book SelectedBook
         {
             get { return selectedBook; }
-            set
-            {
-                SetProperty(ref selectedBook, value);
-            }
+            set { SetProperty(ref selectedBook, value); }
         }
 
-        public string SelectedCustomer
+        public Customer SelectedCustomer
         {
             get { return selectedCustomer; }
             set { SetProperty(ref selectedCustomer, value); }
@@ -103,16 +97,13 @@ namespace KrskaKnihovna.ViewModels
 
         private void InitializeData()
         {
-            LibrariesItems = new ObservableCollection<string>(librariesList.GetAll().Select(l => l.Name));
-            BooksItems = new ObservableCollection<string>();
-            foreach (var book in booksList.GetAll())
-            {
-                BooksItems.Add(book.Title + " (" + book.BookCount + ")");
-            }
+            LibrariesItems = new ObservableCollection<Library>(librariesList.GetAll());
+            BooksItems = new ObservableCollection<Book>(booksList.GetAll());
+            CustomersItems = new ObservableCollection<Customer>(customersList.GetAll());
 
-            CustomersItems = new ObservableCollection<string>(customersList.GetAll().Select(c => c.LastName));
-            selectedLibrary = LibrariesItems.FirstOrDefault();
-            selectedBook = BooksItems.FirstOrDefault();
+            // Nastavení výchozích hodnot
+            SelectedLibrary = LibrariesItems.FirstOrDefault();
+            SelectedBook = BooksItems.FirstOrDefault();
             SelectedCustomer = CustomersItems.FirstOrDefault();
         }
 
@@ -126,23 +117,15 @@ namespace KrskaKnihovna.ViewModels
         {
             try
             {
-                string[] parts = SelectedBook.Split(" (");
-                if (parts.Length > 0)
+                if (SelectedLibrary != null && SelectedBook != null && SelectedCustomer != null)
                 {
-                    SelectedBook = parts[0];
-                }
-                library = librariesList.GetAll().FirstOrDefault(l => l.Name.Equals(SelectedLibrary));
-                book = booksList.GetAll().FirstOrDefault(b => b.Title.Equals(SelectedBook));
-                customer = customersList.GetAll().FirstOrDefault(c => c.LastName.Equals(SelectedCustomer));
-
-                if (library != null && book != null && customer != null)
-                {
-                    if (book.BookCount > 0)
+                    if (SelectedBook.BookCount > 0)
                     {
-                        Loan newLoan = new Loan(library, book, customer);
-                        loanedBook = newLoan;
+                        Loan newLoan = new Loan(SelectedLibrary, SelectedBook, SelectedCustomer);
+                        LoanedBook = newLoan;
                         DialogResult = true;
                         AddLoan = true;
+
                         var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(w => w.IsActive);
                         window?.Close();
                     }
@@ -153,12 +136,12 @@ namespace KrskaKnihovna.ViewModels
                 }
                 else
                 {
-                    MessageBox.Show("Invalid input values!");
+                    MessageBox.Show("Please select valid values!");
                 }
             }
             catch
             {
-                MessageBox.Show("Invalid input values!");
+                MessageBox.Show("An error occurred while processing the loan.");
             }
         }
 

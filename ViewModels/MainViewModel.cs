@@ -14,12 +14,12 @@ namespace KrskaKnihovna.ViewModels
 {
     internal class MainViewModel : ViewModelBasic
     {
-        private ObservableCollection<string> comboBoxLibrariesItems;
-        private ObservableCollection<string> comboBoxBooksItems;
-        private ObservableCollection<string> comboBoxCustomersItems;
-        private string selectedLibrary;
-        private string selectedBook;
-        private string selectedCustomer;
+        private ObservableCollection<Library> comboBoxLibrariesItems;
+        private ObservableCollection<Book> comboBoxBooksItems;
+        private ObservableCollection<Customer> comboBoxCustomersItems;
+        private Library selectedLibrary;
+        private Book selectedBook;
+        private Customer selectedCustomer;
         private LiteCollection<Library> librariesDB;
         private LiteCollection<Book> booksDB;
         private LiteCollection<Customer> customersDB;
@@ -39,48 +39,34 @@ namespace KrskaKnihovna.ViewModels
             ListBoxBooks = new ObservableCollection<Book>();
             ListBoxLibraries = new ObservableCollection<Library>();
             ListBoxLoans = new ObservableCollection<Loan>();
-            ListBoxCustomers= new ObservableCollection<Customer>();
+            ListBoxCustomers = new ObservableCollection<Customer>();
 
             database = DatabaseHelper.GetDatabase();
             if (database == null) { return; }
             InitializeDatabase();
-            Refresh(option);
+            Refresh(EnumPossibilities.Libraries);
         }
 
-        public string LabelTitle
-        {
-            get { return labelTitle; }
-            set { SetProperty(ref labelTitle, value); }
-        }
-
-        public string SelectedLibrary
+        public Library SelectedLibrary
         {
             get { return selectedLibrary; }
-            set
-            {
-                SetProperty(ref selectedLibrary, value);
-            }
+            set { SetProperty(ref selectedLibrary, value); }
         }
 
-        public string SelectedBook
+        public Book SelectedBook
         {
             get { return selectedBook; }
-            set
-            {
-                SetProperty(ref selectedBook, value);
-            }
+            set { SetProperty(ref selectedBook, value); }
         }
 
-        public string SelectedCustomer
+        public Customer SelectedCustomer
         {
             get { return selectedCustomer; }
-            set
-            {
-                SetProperty(ref selectedCustomer, value);
-            }
+            set { SetProperty(ref selectedCustomer, value); }
         }
 
-        
+
+
 
         private ObservableCollection<Book> listBoxBooks;
         public ObservableCollection<Book> ListBoxBooks
@@ -150,19 +136,19 @@ namespace KrskaKnihovna.ViewModels
         public ICommand ButtonExitCommand { get; private set; }
         public ICommand ButtonFilterCommand { get; private set; }
 
-        public ObservableCollection<string> ComboBoxLibrariesItems
+        public ObservableCollection<Library> ComboBoxLibrariesItems
         {
             get { return comboBoxLibrariesItems; }
             set { SetProperty(ref comboBoxLibrariesItems, value); }
         }
 
-        public ObservableCollection<string> ComboBoxBooksItems
+        public ObservableCollection<Book> ComboBoxBooksItems
         {
             get { return comboBoxBooksItems; }
             set { SetProperty(ref comboBoxBooksItems, value); }
         }
 
-        public ObservableCollection<string> ComboBoxCustomersItems
+        public ObservableCollection<Customer> ComboBoxCustomersItems
         {
             get { return comboBoxCustomersItems; }
             set { SetProperty(ref comboBoxCustomersItems, value); }
@@ -196,6 +182,7 @@ namespace KrskaKnihovna.ViewModels
             set { SetProperty(ref filteredVisibility, value); }
         }
 
+
         private void InitializeCommands()
         {
             ButtonLibrariesCommand = new RelayCommand(_ => Refresh(EnumPossibilities.Libraries));
@@ -224,10 +211,19 @@ namespace KrskaKnihovna.ViewModels
 
                 loansDB = (LiteCollection<Loan>)database.GetCollection<Loan>("LoansDB");
                 loansList = new Records<Loan>(loansDB);
+
+                ComboBoxLibrariesItems = new ObservableCollection<Library>(librariesList.GetAll());
+                ComboBoxBooksItems = new ObservableCollection<Book>(booksList.GetAll());
+                ComboBoxCustomersItems = new ObservableCollection<Customer>(customersList.GetAll());
+
+                // Nastavení výchozích hodnot
+                SelectedLibrary = ComboBoxLibrariesItems.FirstOrDefault();
+                SelectedBook = ComboBoxBooksItems.FirstOrDefault();
+                SelectedCustomer = ComboBoxCustomersItems.FirstOrDefault();
             }
             catch (Exception e)
             {
-                MessageBox.Show("Error while creating database: " + e.Message);
+                MessageBox.Show("Error initializing database: " + e.Message);
             }
         }
 
@@ -396,7 +392,7 @@ namespace KrskaKnihovna.ViewModels
                     // Při pokusu o editaci výpůjček zobrazíme varování
                     MessageBox.Show("Loans cannot be edited!");
                     break;
-                    
+
             }
             Refresh(option);
         }
@@ -449,13 +445,13 @@ namespace KrskaKnihovna.ViewModels
 
             if (loanVM.AddLoan)
             {
-                
+
 
                 // Update the database dynamically
                 var book = booksList.GetAll().FirstOrDefault(b => b.Id == loanVM.LoanedBook.SelectedBook.Id);
                 var customer = customersList.GetAll().FirstOrDefault(c => c.Id == loanVM.LoanedBook.SelectedCustomer.Id);
 
-                if (book != null && customer != null && book.BookCount > 0) 
+                if (book != null && customer != null && book.BookCount > 0)
                 {
                     // Add the loan
                     loansList.Add(loanVM.LoanedBook);
@@ -573,6 +569,8 @@ namespace KrskaKnihovna.ViewModels
         }
         private Visibility _filtersVisibility = Visibility.Collapsed; // Default: Hidden
 
+        public string LabelTitle { get; private set; }
+
         public Visibility FiltersVisibility
         {
             get { return _filtersVisibility; }
@@ -592,10 +590,8 @@ namespace KrskaKnihovna.ViewModels
 
             this.option = option;
 
-            // Změníme stav pro tlačítko Edit a Delete na základě vybrané sekce
+            // Změníme stav pro tlačítka
             Option = option;
-
-            // Reset SelectedListBoxItem, což deaktivuje tlačítko Delete pokud není nic vybráno
             SelectedListBoxItem = null;
 
             switch (option)
@@ -609,7 +605,7 @@ namespace KrskaKnihovna.ViewModels
                     }
                     break;
                 case EnumPossibilities.Books:
-                    LabelTitle = "Books database";
+                    LabelTitle = "Books Database";
                     FiltersVisibility = Visibility.Collapsed;
                     foreach (var book in booksList.GetAll())
                     {
@@ -627,49 +623,12 @@ namespace KrskaKnihovna.ViewModels
                     break;
                 case EnumPossibilities.Loans:
                     LabelTitle = "Loans";
-                    FiltersVisibility = Visibility.Visible; 
+                    FiltersVisibility = Visibility.Visible;
                     foreach (var loan in loansList.GetAll())
                     {
                         ListBoxLoans.Add(loan);
                     }
                     break;
-            }
-
-
-            // Doplnění ComboBoxů
-            ComboBoxLibrariesItems = new ObservableCollection<string>();
-            ComboBoxBooksItems = new ObservableCollection<string>();
-            ComboBoxCustomersItems = new ObservableCollection<string>();
-
-            ComboBoxLibrariesItems.Add(notSelected);
-            ComboBoxBooksItems.Add(notSelected);
-            ComboBoxCustomersItems.Add(notSelected);
-
-            foreach (var library in librariesList.GetAll())
-            {
-                ComboBoxLibrariesItems.Add(library.Name);
-            }
-            foreach (var book in booksList.GetAll())
-            {
-                ComboBoxBooksItems.Add(book.Title);
-            }
-            foreach (var customer in customersList.GetAll())
-            {
-                ComboBoxCustomersItems.Add(customer.LastName);
-            }
-
-            // Vybereme první hodnotu v ComboBoxech, pokud je k dispozici
-            if (ComboBoxLibrariesItems.Count > 0)
-            {
-                SelectedLibrary = ComboBoxLibrariesItems.FirstOrDefault();
-            }
-            if (ComboBoxBooksItems.Count > 0)
-            {
-                SelectedBook = ComboBoxBooksItems.FirstOrDefault();
-            }
-            if (ComboBoxCustomersItems.Count > 0)
-            {
-                SelectedCustomer = ComboBoxCustomersItems.FirstOrDefault();
             }
         }
     }

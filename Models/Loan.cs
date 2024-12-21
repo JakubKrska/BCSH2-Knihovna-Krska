@@ -18,10 +18,5 @@ namespace KrskaKnihovna.Models
             SelectedCustomer = selectedCustomer;
             SelectedBook.BookCount++;
         }
-
-        public override string? ToString()
-        {
-            return string.Format("{0,-30} Title: {1,-30} Customer: {2,-12} ID:{3}", SelectedLibrary.Name, SelectedBook.Title, SelectedCustomer.LastName, Id);
-        }
     }
 }

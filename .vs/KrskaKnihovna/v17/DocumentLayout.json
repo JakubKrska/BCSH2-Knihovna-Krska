@@ -7,42 +7,6 @@
       "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\mainwindowview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\mainwindowview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\librarybranchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\librarybranchview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\booksview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\booksview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\loansview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\loansview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\customersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\customersview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\librarybranchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\librarybranchviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\customersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\customersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -51,12 +15,36 @@
       "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\logs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\logs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:models\\library.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\loansviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\loansviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\mainwindowview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\mainwindowview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\relaycommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\customersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\customersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\viewmodels\\booksviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:viewmodels\\booksviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|c:\\users\\kubak\\source\\repos\\bcsh2-knihovna-krska\\views\\loansview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7195941C-5461-4EDF-9CE9-6B472B14084C}|KrskaKnihovna.csproj|solutionrelative:views\\loansview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 13,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,89 +82,119 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T17:53:34.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "BooksView.xaml",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\BooksView.xaml",
-              "RelativeDocumentMoniker": "Views\\BooksView.xaml",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\BooksView.xaml",
-              "RelativeToolTip": "Views\\BooksView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T00:58:46.103Z",
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T17:53:29.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Library.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Library.cs",
+              "RelativeDocumentMoniker": "Models\\Library.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Library.cs",
+              "RelativeToolTip": "Models\\Library.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T17:53:03.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Loan.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Loan.cs",
+              "RelativeDocumentMoniker": "Models\\Loan.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Loan.cs",
+              "RelativeToolTip": "Models\\Loan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T17:52:48.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RelayCommand.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\RelayCommand.cs",
+              "RelativeDocumentMoniker": "ViewModels\\RelayCommand.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\RelayCommand.cs",
+              "RelativeToolTip": "ViewModels\\RelayCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T17:48:09.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "LoansView.xaml",
               "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\LoansView.xaml",
               "RelativeDocumentMoniker": "Views\\LoansView.xaml",
               "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\LoansView.xaml",
               "RelativeToolTip": "Views\\LoansView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T00:58:40.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LibraryBranchView.xaml",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\LibraryBranchView.xaml",
-              "RelativeDocumentMoniker": "Views\\LibraryBranchView.xaml",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\LibraryBranchView.xaml",
-              "RelativeToolTip": "Views\\LibraryBranchView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T00:58:40.064Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CustomersView.xaml",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\CustomersView.xaml",
-              "RelativeDocumentMoniker": "Views\\CustomersView.xaml",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\CustomersView.xaml",
-              "RelativeToolTip": "Views\\CustomersView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-12-19T00:58:39.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LibraryBranchViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\LibraryBranchViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\LibraryBranchViewModel.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\LibraryBranchViewModel.cs",
-              "RelativeToolTip": "ViewModels\\LibraryBranchViewModel.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAIwGQAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T00:54:30.384Z",
+              "WhenOpened": "2024-12-21T17:45:14.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "BooksViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\BooksViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\BooksViewModel.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\BooksViewModel.cs",
+              "RelativeToolTip": "ViewModels\\BooksViewModel.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAgwBAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T16:56:16.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "CustomersViewModel.cs",
               "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\CustomersViewModel.cs",
               "RelativeDocumentMoniker": "ViewModels\\CustomersViewModel.cs",
               "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\CustomersViewModel.cs",
               "RelativeToolTip": "ViewModels\\CustomersViewModel.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAADwv1gAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAlwEkAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-19T00:46:22.781Z",
+              "WhenOpened": "2024-12-21T13:13:41.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Enum.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Enum.cs",
-              "RelativeDocumentMoniker": "Models\\Enum.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Enum.cs",
-              "RelativeToolTip": "Models\\Enum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "LoansViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\LoansViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\LoansViewModel.cs",
+              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\LoansViewModel.cs",
+              "RelativeToolTip": "ViewModels\\LoansViewModel.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAhwG0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:23:04.574Z"
+              "WhenOpened": "2024-12-21T12:15:21.231Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -186,14 +204,14 @@
               "RelativeDocumentMoniker": "ViewModels\\MainViewModel.cs",
               "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\ViewModels\\MainViewModel.cs",
               "RelativeToolTip": "ViewModels\\MainViewModel.cs",
-              "ViewState": "AgIAAEYBAAAAAAAAAAD4v3ABAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-14T23:06:01.03Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "MainWindowView.xaml",
               "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Views\\MainWindowView.xaml",
               "RelativeDocumentMoniker": "Views\\MainWindowView.xaml",
@@ -202,69 +220,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-12-14T23:04:08.5Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Loan.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Loan.cs",
-              "RelativeDocumentMoniker": "Models\\Loan.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Loan.cs",
-              "RelativeToolTip": "Models\\Loan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:03:21.047Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Logs.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Logs.cs",
-              "RelativeDocumentMoniker": "Models\\Logs.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Logs.cs",
-              "RelativeToolTip": "Models\\Logs.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAADgvx0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:03:20.117Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Library.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Library.cs",
-              "RelativeDocumentMoniker": "Models\\Library.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Library.cs",
-              "RelativeToolTip": "Models\\Library.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:02:46.063Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "Models\\Customer.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Customer.cs",
-              "RelativeToolTip": "Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T23:01:57.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Book.cs",
-              "DocumentMoniker": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Book.cs",
-              "RelativeDocumentMoniker": "Models\\Book.cs",
-              "ToolTip": "C:\\Users\\kubak\\source\\repos\\BCSH2-Knihovna-Krska\\Models\\Book.cs",
-              "RelativeToolTip": "Models\\Book.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-14T22:58:47.601Z"
             }
           ]
         }

@@ -19,9 +19,6 @@ namespace KrskaKnihovna.Models
             Phone = phone;
             LoanCount = 0;
         }
-        public override string? ToString()
-        {
-            return string.Format("{0,-15} {1,-15} Phone: {2,-15} Loan count: {3,-5} ID:{4}", FirstName, LastName, Phone, LoanCount, Id);
-        }
+        
     }
 }
